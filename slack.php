@@ -25,10 +25,7 @@ class SlackPlugin extends Plugin {
      * The entrypoint of the plugin, keep short, always runs.
      */
     function bootstrap() {
-        // get plugin instances
-        self::$pluginInstance = self::getPluginInstance(null);
-
-        $updateTypes = $this->getConfig(self::$pluginInstance)->get('slack-update-types');
+        $updateTypes = $this->getConfig()->get('slack-update-types');
         
         // Listen for osTicket to tell us it's made a new ticket or updated
         // an existing ticket:
